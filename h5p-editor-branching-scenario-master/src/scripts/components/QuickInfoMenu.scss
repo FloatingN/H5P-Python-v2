@@ -1,0 +1,144 @@
+@import '../../styles/components/icons.scss';
+@import '../../styles/main.scss';
+
+.legend {
+  cursor: pointer;
+  width: 8rem;
+  background-color: white;
+  position: absolute;
+  left: calc(100% - 9rem);
+  top: $xxlarge;
+  text-align: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-weight: bold;
+  transition: all 0.1s ease;
+  user-select: none;
+  z-index: 10;
+  overflow: hidden;
+
+  &:hover {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px;
+  }
+
+  & > span {
+    font-size: 0.875rem;
+  }
+
+  &.fade {
+    pointer-events: none;
+    opacity: 0.15;
+  }
+
+  .close {
+    text-decoration: none;
+    text-align: right;
+    padding: $xsmall;
+    font-size: $medium;
+    text-align: right;
+    color: #1773DA;
+  }
+
+  &.expanded {
+    width: 20rem;
+    left: calc(100% - 21rem);
+  }
+}
+
+.legend-content {
+  min-width: 19rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+
+  ul {
+    list-style: none;
+    margin: 0.6em 0 0 0;
+    padding: $large $large 0;
+    border-top: solid 1px $col2;
+
+    li {
+      margin-bottom: $small;
+      font-size: 0.708rem;
+      font-weight: normal;
+      list-style-position: inside;
+      text-align: left;
+      padding-left: 2rem;
+      padding-bottom: 0.85em;
+
+      &:before {
+        font-size: $large;
+        width: $large;
+        height: $large;
+        position: absolute;
+        left: 1.5rem;
+        border: solid 1px;
+        border-radius: 3px;
+      }
+
+      &:nth-child(1):before {
+        color: #1773DA;
+        background-color: lighten($accent-col, 40);
+        font-family: "Material Icons";
+        content: $icon-plus-2;
+        border: 2px dotted #1773DA;
+      }
+
+      &:nth-child(2):before {
+        border-color: $col6;
+        background-color: $col6;
+        content: "";
+      }
+
+      &:nth-child(3):before {
+        border-color: $accent-col;
+        background-color: $accent-col;
+        content: "";
+      }
+
+      &:nth-child(4):before {
+        border-color: $accent-col;
+        background-color: $accent-col;
+        border-radius: 3rem;
+        content: "";
+      }
+
+      &:nth-child(5):before {
+        background: white;
+        border-radius: 3rem;
+        border-color: $accent-col;
+        content: " ";
+      }
+
+      &:nth-child(6):before {
+        font-family: "Material Icons";
+        color: $accent-col;
+        content: $icon-end-scenario;
+        color: $col14;
+        border: none;
+      }
+
+      &:nth-child(7):before {
+        @include icon-go-to-existing();
+        border: none;
+        transform: rotate(-45deg);
+      }
+
+      &:last-child {
+        border-top: solid 1px $col2;
+        padding-top: $large;
+        font-size: 0.75rem;
+        text-align: center;
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.expanded {
+    display: inherit;
+    opacity: 1;
+  }
+}

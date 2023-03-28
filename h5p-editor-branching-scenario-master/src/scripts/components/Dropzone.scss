@@ -1,0 +1,39 @@
+@import '../../styles/main.scss';
+
+.dropzone {
+  position: absolute;
+  width: 2.6em;
+  height: 2em;
+  padding-top: 0.3rem;
+  box-sizing: border-box;
+  color: #1773DA;
+  background-color: #c4ddf9;
+  border: dotted 2px #1773DA;
+  cursor: pointer;
+  text-align: center;
+
+  &:before {
+    font-family: "Material Icons";
+    content: $icon-plus-2;
+    font-size: 1.5em;
+    line-height: 0.75em;
+  }
+
+  &:hover, &.highlight {
+    border-color: #125bac;
+    color: #125bac;
+    background-color: #96c2f4;
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
+}
+
+.dropzone-editor-path {
+  background-color: #d9eaf4;
+  border-color: #c3e3ee;
+  color: #335cb4;
+  margin-top: 0.7rem;
+  padding: 0.7rem;
+}

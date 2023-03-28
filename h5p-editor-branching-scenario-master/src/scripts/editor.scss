@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'bs-editor';
+  src: url('../styles/fonts/bs.eot?l2n71k');
+  src: url('../styles/fonts/bs.eot?l2n71k#iefix') format('embedded-opentype'),
+  url('../styles/fonts/bs.ttf?l2n71k') format('truetype'),
+  url('../styles/fonts/bs.woff?l2n71k') format('woff'),
+  url('../styles/fonts/bs.svg?l2n71k#bs') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.h5p-branchingscenario-editor {
+  .tree {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+  
+  .h5p-coursepresentation-editor .h5p-shape-editor .sp-container{
+    left: auto !important;
+    right: 0;
+  }
+}

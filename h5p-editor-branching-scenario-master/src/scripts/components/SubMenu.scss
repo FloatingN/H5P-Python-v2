@@ -1,0 +1,68 @@
+@import '../../styles/main.scss';
+
+.submenu {
+  position: absolute;
+  left: calc(100% - 1.8rem);
+  top: 100%;
+  color: black;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  list-style: none;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  z-index: 1;
+
+  li {
+    padding: 0.5rem;
+    line-height: 0.708rem;
+    color: $col1;
+    padding-left: 0.6rem;
+    align-items: center;
+  }
+
+  li:hover {
+    background-color: #F1F3F6;
+  }
+
+  li:first-child {
+    background-color: #F1F3F6;
+    font-weight: bold;
+    border-bottom: solid 0.042rem #F1F3F6;
+    cursor: auto;
+  }
+
+  li:last-child {
+    border-top: solid 0.042rem #F1F3F6;
+  }
+
+  li:before {
+    font-family: "Material Icons";
+    margin-right: 0.3em;
+    line-height: 1;
+    vertical-align: bottom;
+  }
+
+  li.edit-content:before {
+    content: $icon-edit;
+  }
+
+  li.preview-content:before {
+    content: $icon-preview;
+  }
+
+  li.copy-content:before {
+    font-family: 'bs-editor';
+    content: $icon-copy;
+  }
+
+  li.delete-content:before {
+    content: $icon-delete;
+  }
+
+  .active {
+    opacity: 1;
+  }
+}

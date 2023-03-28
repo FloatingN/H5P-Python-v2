@@ -1,0 +1,279 @@
+@import '../../styles/components/icons.scss';
+@import '../../styles/main.scss';
+
+.editor-overlay {
+  background: #fff;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 53rem;
+  max-height: 90%;
+  height: 90%;
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  font-size: 0.7rem;
+  z-index: 61;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+
+  &.move-down {
+    z-index: 59;
+  }
+
+  .form-manager-footer {
+    display: none;
+  }
+}
+
+.editor-overlay .editor-overlay-header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 3rem;
+  border-bottom: 0.042rem solid #eee;
+  clear: both;
+  position: relative;
+  box-shadow: 0 2px 2px rgba(18, 14, 14, 0.1);
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 100%;
+}
+.editor-overlay.inconspicuous {
+  .editor-overlay-header {
+    visibility: hidden;
+    height: 41px;
+  }
+  .form-manager-head {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .editor-overlay-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow-x: hidden;
+  }
+  .form-manager-movable {
+    top: 0;
+    border-left: 0;
+  }
+  .form-manager-form.form-manager-slidein {
+    left: 0;
+  }
+}
+
+.editor-overlay .editor-overlay-content {
+  .editor-overlay-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #454347;
+  }
+
+  .editor-overlay-label-red {
+    margin-left: 0.25em;
+    color: #da0001;
+  }
+
+  .editor-overlay-library{
+    .form-manager {
+      border: 0;
+      
+      &.libwrap { 
+        > .form-manager-form {
+          padding: 0;
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.editor-overlay .editor-overlay-header .editor-overlay-icon {
+  width: 2.5rem;
+}
+
+.editor-overlay .editor-overlay-header .editor-overlay-title {
+  padding-left: 1.3rem;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: $col1;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.8em;
+
+  &:before {
+    float: inherit;
+    font-family: "Material Icons";
+    font-size: 1rem;
+    font-weight: normal;
+    margin-right: 0.3rem;
+    padding-right: 0.5em;
+  }
+
+  &.editor-overlay-icon-course-presentation:before {
+    content: $icon-presentation;
+  }
+
+  &.editor-overlay-icon-advanced-text:before {
+    content: $icon-text;
+  }
+
+  &.editor-overlay-icon-image:before {
+    content: $icon-image;
+  }
+
+  &.editor-overlay-icon-image-hotspots:before {
+    content: $icon-image-hotspots;
+  }
+
+  &.editor-overlay-icon-interactive-video:before {
+    content: $icon-interactive-video;
+  }
+
+  &.editor-overlay-icon-video:before {
+    content: $icon-video;
+  }
+
+  &.editor-overlay-icon-branching-question:before {
+    font-family: "bs-editor";
+    content: $icon-branching-question;
+  }
+}
+
+.editor-overlay .editor-overlay-header .buttons {
+  padding: 0.7em;
+  white-space: nowrap;
+}
+
+.editor-overlay .editor-overlay-header .buttons .button {
+  font-size: 100%;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+
+  color: #1773DA;
+  border: solid 2px transparent;
+  background-color: transparent;
+}
+
+.editor-overlay .editor-overlay-header .buttons .button:hover {
+  background-color: #dbdee3;
+}
+
+.editor-overlay .editor-overlay-header .buttons .button-blue {
+  font-size: 0.85rem;
+  font-weight: bold;
+  font-family: H5PRoboto;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  color: #fff;
+  background-color: #1773DA;
+  border: solid 2px #1773DA;
+
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+
+.editor-overlay .editor-overlay-header .buttons .button-blue:hover {
+  background-color: #1567c3;
+}
+
+.editor-overlay .editor-overlay-header .buttons .button-remove {
+  font-size: 0.85rem;
+  font-family: H5PRoboto;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  color: #a00;
+  background: none;
+  border: none;
+
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+
+.editor-overlay .editor-overlay-titlefield {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.editor-overlay .editor-overlay-content {
+  padding: 1.125rem 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.editor-overlay .editor-overlay-footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top: 0.042rem solid #eee;
+  clear: both;
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Add icons for IV overlay */
+.field.wizard .h5peditor-tab-a.h5peditor-tab-video:before {
+  content: '\e911';
+}
+.field.wizard .h5peditor-tab-a.h5peditor-tab-assets:before {
+  content: '\e917';
+}
+.field.wizard .h5peditor-tab-a.h5peditor-tab-summary:before {
+  content: '\e912';
+}
+
+.editor-overlay .editor-overlay-content:not(.dynamic-score) {
+  .h5p-editor-branching-question .content.hide-score .field-name-endScreenScore {
+    display: none;
+  }
+}
+
+.editor-overlay .editor-overlay-content.hide-scores {
+  .h5p-editor-branching-question .field-name-endScreenScore {
+    display: none;
+  }
+}
+
+.editor-overlay {
+  .editor-overlay-feedback-semantics {
+    margin: 2em 0;
+  }
+
+  .editor-overlay-content:not(.dynamic-score) {
+    .editor-overlay-feedback-semantics.hide-score .field-name-endScreenScore {
+      display: none;
+    }
+  }
+}
+
+.editor-overlay.h5p-branching-question .editor-overlay-feedback-semantics {
+  display: none;
+}
+.editor-overlay-semantics {
+  margin-bottom: 20px;
+}

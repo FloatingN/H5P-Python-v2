@@ -1,0 +1,37 @@
+@import '../../styles/main.scss';
+
+.tooltip-wrapper {
+  display: inline;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+.tooltip-button {
+  &:after {
+    font-family: "Material Icons";
+    top: 0;
+    color: #88a7ca;
+    font-size: 1.325em;
+    font-weight: normal;
+    cursor: pointer;
+    padding-left: 0.3rem;
+    content: $icon-info;
+  }
+}
+
+.tab-view-info{
+  .tooltip-wrapper {
+    .tooltip-button {
+      &:after {
+        color: #999999;
+        font-size: 1.325em;
+        font-weight: normal;
+      }
+    }
+  }
+}

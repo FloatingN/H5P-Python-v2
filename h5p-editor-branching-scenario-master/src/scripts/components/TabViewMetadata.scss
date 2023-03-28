@@ -1,0 +1,28 @@
+// Overrides of style from Core for metadata form
+.h5p-branchingscenario-editor .tabs #metadata .h5p-metadata-wrapper {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  padding: 1em;
+  margin: 0;
+  position: relative;
+  width: auto;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+
+  display: flex;
+  flex-direction: column;
+
+  .h5p-metadata-header {
+    display: none;
+  }
+
+  .h5p-metadata-fields-wrapper {
+    margin: 0;  
+  }
+
+  &:after {
+    display: none;
+  }
+}

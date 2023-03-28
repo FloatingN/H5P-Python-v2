@@ -1,0 +1,36 @@
+@import '../../../styles/components/icons';
+@import '../../../styles/base/colours';
+
+.h5p-branchingscenario-editor {
+
+  .empty-preview-wrapper {
+    text-align: center;
+    padding: 2em 1em;
+  }
+
+  .empty-preview-icon:before {
+    font-family: 'Material Icons';
+    content: $icon-no-preview;
+    font-size: 11em;
+    color: #e9ebee;
+  }
+
+  .empty-preview-title {
+    font-size: 2rem;
+    display: block;
+    font-weight: 300;
+    color: $accent-col;
+    margin-bottom: 0.25em;
+  }
+
+  .empty-preview-description {
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    display: block;
+    color: #626262;
+  }
+
+  .editor-link {
+    text-decoration: underline;
+  }
+}
