@@ -6,7 +6,8 @@
 
 `libraryScreen.js` #372
 #######################
-```// Content overlay required for some instances
+```JS
+// Content overlay required for some instances
 this.contentOverlays[library.contentId] = new H5P.BranchingScenario.LibraryScreenOverlay(this);
 wrapper.appendChild(this.contentOverlays[library.contentId].getDOM());
 if (libraryMachineName === 'H5P.InteractiveVideo' || libraryMachineName === 'H5P.Video') {
@@ -24,12 +25,14 @@ if (libraryMachineName === 'H5P.InteractiveVideo' || libraryMachineName === 'H5P
       this.handleProceedAfterVideo();
     }
   );
-}```
+}
+```
 #######################
 
 `libraryScreen.js` #504
 #######################
-```// Proceed to Branching Question automatically after video has ended
+```JS
+// Proceed to Branching Question automatically after video has ended
 if (library === 'H5P.Video' && this.nextIsBranching(id)) {
   instance.on('stateChange', function (event) {
     if (event.data === H5P.Video.ENDED && self.navButton) {
@@ -55,12 +58,14 @@ if (library === 'H5P.Video' || library === 'H5P.InteractiveVideo') {
   videoInstance.on('error', () => {
     self.parent.enableNavButton();
   });
-}```
+}
+```
 #######################
 
 `libraryScreen.js` #590
 #######################
-```LibraryScreen.prototype.forceContentFinished = function (instance, library) {
+```JS
+LibraryScreen.prototype.forceContentFinished = function (instance, library) {
   let forceContentFinished = false;
 
   if (instance) {
@@ -86,12 +91,14 @@ if (library === 'H5P.Video' || library === 'H5P.InteractiveVideo') {
   }
 
   return forceContentFinished;
-};```
+};
+```
 #######################
 
 `libraryScreen.js` #624
 #######################
-```LibraryScreen.prototype.addFinishedListeners = function (instance, library) {
+```JS
+LibraryScreen.prototype.addFinishedListeners = function (instance, library) {
   const that = this;
 
   if (typeof library !== 'string' || !instance) {
@@ -168,16 +175,19 @@ if (library === 'H5P.Video' || library === 'H5P.InteractiveVideo') {
         });
       }
   }
-};```
+};
+```
 #######################
 
 `libraryScreen.js` #1350
 #######################
-```const isImage = (instance && instance.libraryInfo.machineName === 'H5P.Image');
+```JS
+const isImage = (instance && instance.libraryInfo.machineName === 'H5P.Image');
 const isCP = (instance && instance.libraryInfo.machineName === 'H5P.CoursePresentation');
 const isHotspots = (instance && instance.libraryInfo.machineName === 'H5P.ImageHotspots');
 const isVideo = (instance && instance.libraryInfo.machineName === 'H5P.Video');
 const isIV = (instance && instance.libraryInfo.machineName === 'H5P.InteractiveVideo');
 const hasSize = (instance && instance.width && instance.height);
-const isYoutube = element.classList.contains('h5p-youtube');```
+const isYoutube = element.classList.contains('h5p-youtube');
+```
 #######################
