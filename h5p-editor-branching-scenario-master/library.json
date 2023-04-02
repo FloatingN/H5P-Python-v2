@@ -2,7 +2,7 @@
   "title": "Branching Scenario Editor",
   "description": "description",
   "majorVersion": 1,
-  "minorVersion": 5,
+  "minorVersion": 4,
   "patchVersion": 2,
   "runnable": 0,
   "author": "Joubel",
@@ -29,9 +29,14 @@
       "minorVersion": 0
     },
     {
+      "machineName": "H5P.BranchingScenario",
+      "majorVersion": 1,
+      "minorVersion": 7
+    },
+    {
       "machineName": "H5P.CoursePresentation",
       "majorVersion": 1,
-      "minorVersion": 25
+      "minorVersion": 24
     },
     {
       "machineName": "H5P.AdvancedText",
@@ -51,12 +56,17 @@
     {
       "machineName": "H5P.InteractiveVideo",
       "majorVersion": 1,
-      "minorVersion": 26
+      "minorVersion": 24
     },
     {
       "machineName": "H5P.Video",
       "majorVersion": 1,
       "minorVersion": 6
+    },
+    {
+      "machineName": "H5P.Python",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }
