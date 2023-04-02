@@ -7,7 +7,7 @@ import Content from "../components/Content";
  * @returns {boolean}
  */
 const isBranching = (library) => {
-  return getMachineName(library) === 'H5P.BranchingQuestion';
+  return getMachineName(library) === 'H5P.BranchingQuestion' || getMachineName(library) === 'H5P.Python';
 };
 
 /**
