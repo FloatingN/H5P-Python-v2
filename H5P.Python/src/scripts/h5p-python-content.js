@@ -206,6 +206,8 @@ export default class PythonContent {
    * This will run the student code and the solution code and check both output.
    * The student code will success if both output are the same.
    */
+
+
   checkAnswer_compareOutputs() {
     let iCheckExecution = -1;
     let iCheckInputs;
@@ -224,7 +226,6 @@ export default class PythonContent {
         checkInputs = this.params.grading.inputs[iCheckExecution].split('\n');
         iCheckInputs = 0;
         this.userOutput = '';
-        this.solOutput = '';
         return Sk.H5P.run(this.getCodeToRun(this.editor.getValue(), true), {
           output: x => {
             this.userOutput += x;
@@ -241,57 +242,11 @@ export default class PythonContent {
           shouldStop: () => this.shouldStop
         }).catch((error) => {
           runError = error;
-        }).then(() => {
-          iCheckInputs = 0;
-          return Sk.H5P.run(this.getCodeToRun(CodeMirror.H5P.decode(this.params.solutionCode), true), {
-            output: x => {
-              this.solOutput += x;
-            },
-            input: (p, resolve) => {
-              let r = checkInputs[iCheckInputs] || '';
-              iCheckInputs++;
-              p.output(p.prompt);
-              p.output(r);
-              p.output('\n');
-              resolve(r);
-            },
-            shouldStop: () => this.shouldStop
-          });
         }).finally(() => {
-          if (!runError && this.userOutput === this.solOutput) {
+          if (!runError) {
             return Promise.resolve();
           }
           else {
-            let outputText = '';
-            if (!runError) {
-              // todo : localize
-              outputText += 'Output Missmatch\n';
-              outputText += '----------------\n';
-              outputText += 'Expected output :\n';
-              outputText += '----------------\n';
-              outputText += this.solOutput;
-              outputText += '----------------\n';
-              outputText += 'Current output :\n';
-              outputText += '----------------\n';
-              outputText += this.userOutput;
-            }
-            else {
-              if (runError.traceback) {
-                // if code was added before, substract the length of added code to preserve line number error.
-                let addedCodeLength = this.getBeforeCode(true).split('\n').length - 1; // +1 because of \n
-                runError.traceback.forEach(v => {
-                  if (v.filename === '<stdin>.py') {
-                    v.lineno -= addedCodeLength;
-                  }
-                });
-              }
-              outputText += 'Error while execution\n';
-              outputText += '----------------\n';
-              outputText += runError.toString();
-            }
-
-            CodeMirror.H5P.appendLines(this.output, outputText, 'CodeMirror-python-highlighted-error-line');
-
             return Promise.reject();
           }
         });
@@ -299,22 +254,25 @@ export default class PythonContent {
     }).forEach((promiseFactory) => {
       result = result.then(promiseFactory);
     });
-
     result.then(() => {
-      this.python.setFeedback(undefined, this.params.grading.maxScore, this.params.grading.maxScore);
-
-      this.python.answerGiven = true;
-      this.python.score = this.params.maxScore;
-      this.python.passed = true;
-    }).catch(() => {
-      this.python.setFeedback(undefined, 0, this.params.grading.maxScore);
-
-      this.python.answerGiven = true;
-      this.python.score = 0;
-      this.python.passed = false;
-    }).finally(() => {
-      this.python.hideButton('stop');
-    });
+    /**/
+    var alts = this.params.branchingQuestion.alternatives;
+    let matchedAlternative = false;
+    alert(this.userOutput+" "+alts[1].text.replace("\\n","\n")+(alts[1].text==this.userOutput))
+    for (let i = 0; i < alts.length; i++) {
+      if (this.userOutput.trim() == alts[i].text.trim()) {
+        matchedAlternative = alts[i];
+        break;
+      }
+    }
+    alert(matchedAlternative)
+    alert(matchedAlternative.nextContentId)
+    var nextScreen = {
+      nextContentId: matchedAlternative.nextContentId
+    };
+    this.python.trigger('navigated', nextScreen);
+    })
+    /**/
 
   }
 
