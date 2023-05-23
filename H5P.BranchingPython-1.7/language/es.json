@@ -1,0 +1,197 @@
+{
+  "semantics": [
+    {
+      "label": "Editor de Escenarios Ramificados",
+      "fields": [
+        {
+          "label": "Título"
+        },
+        {
+          "label": "Pantalla inicial",
+          "fields": [
+            {
+              "label": "Título de la pantalla inicial",
+              "placeholder": "Título para tu curso"
+            },
+            {
+              "label": "Subtítulo de la pantalla inicial",
+              "placeholder": "Detalles sobre el curso"
+            },
+            {
+              "label": "Imagen de la pantalla inicial"
+            },
+            {
+              "label": "Texto alterno para la imagen"
+            }
+          ]
+        },
+        {
+          "label": "Lista de pantallas finales",
+          "field": {
+            "label": "Pantalla final",
+            "fields": [
+              {
+                "label": "Título"
+              },
+              {
+                "label": "Texto"
+              },
+              {
+                "label": "Imagen"
+              },
+              {
+                "label": "Puntuación:",
+                "description": "La puntuación será enviada a cualquier LMS, LRS o cualquier otro servicio que reciba puntuaciones de H5P de los usuarios que alcancen el escenario final por defecto"
+              },
+              {
+                "label": "Identificador del contenido"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Lista de contenido del escenario ramificado",
+          "entity": "contenido",
+          "field": {
+            "fields": [
+              {},
+              {
+                "label": "Mostrar título del contenido en vista",
+                "description": "Si está seleccionado, el usuario verá el título del contenido en la barra superior encima de ese contenido"
+              },
+              {
+                "label": "Text for the proceed button (max length: 50 characters)",
+                "default": "Proceed"
+              },
+              {
+                "label": "Completado obligatorio",
+                "description": "Insta a los usuario a completar la interacción antes de seguir con el escenario. Esta configuración sólo funcionará para interacciones que puedan completarse",
+                "options": [
+                  {
+                    "label": "Usar la configuración del comportamiento"
+                  },
+                  {
+                    "label": "Activado"
+                  },
+                  {
+                    "label": "Desactivado"
+                  }
+                ]
+              },
+              {
+                "label": "Siguiente identificador de contenido (las pantallas finales se definen con números negativos)"
+              },
+              {
+                "label": "Retroalimentación",
+                "fields": [
+                  {
+                    "label": "Título de la retroalimentación"
+                  },
+                  {
+                    "label": "Texto de retroalimentación"
+                  },
+                  {
+                    "label": "Imagen de retroalimentación"
+                  },
+                  {
+                    "label": "Puntuación para este escenario",
+                    "description": "La puntuación se enviará a cualquier LMS, LRS o cualquier otro servicio conectado que reciba puntuaciones de H5P para los usuarios que lleguen a este escenario."
+                  }
+                ]
+              },
+              {
+                "label": "Configuración del comportamiento",
+                "description": "Esto permite que el usuario vuelva atrás y vea la pregunta/contenido anterior en el escenario",
+                "options": [
+                  {
+                    "label": "Usar la configuración del comportamiento"
+                  },
+                  {
+                    "label": "Activado"
+                  },
+                  {
+                    "label": "Desactivado"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Opciones de puntuación",
+          "fields": [
+            {
+              "label": "Opciones de puntuación",
+              "description": "Selecciona el tipo de puntuación",
+              "options": [
+                {
+                  "label": "Establecer la puntuación estáticamente para cada escenario final"
+                },
+                {
+                  "label": "Calcular la puntación dinámicamente según las respuestas de los usuarios"
+                },
+                {
+                  "label": "Sin puntuación"
+                }
+              ]
+            },
+            {
+              "label": "Incluir la puntuación de interacciones dentro del Escenario Ramificado",
+              "description": "Si se activa, se añadirá a la puntuación total obtenida las puntuaciones de los vídeos interactivos. En caso contrario, sólo contarán las puntuaciones especificadas en las secciones de retroalimentación de los elementos de contenido, preguntas ramificadas y escenarios finales."
+            }
+          ]
+        },
+        {
+          "label": "Configuración del comportamiento",
+          "fields": [
+            {
+              "label": "Deshabilitar navegación hacia atrás",
+              "description": "Anular las configuraciones individuales para permitir la navegación hacia atrás"
+            },
+            {
+              "label": "Anular requerir contenido terminado",
+              "description": "Anular las configuraciones individuales para requerir que el contenido esté terminado antes de activar el botón para \"Proceder\". No tendrá efecto si el contenido no indica si fue \"terminada\"; por ejemplo imágenes o presentaciones d curso con una sola página."
+            },
+            {
+              "label": "Aleatorizar Preguntas Ramificadas",
+              "description": "Preguntas ramificadas serán mostradas en orden aleatorio"
+            }
+          ]
+        },
+        {
+          "label": "Localización",
+          "fields": [
+            {
+              "label": "Texto para el botón de la pantalla inicial",
+              "default": "Comienza el curso"
+            },
+            {
+              "label": "Texto para el botón de la pantalla final",
+              "default": "Reinicia el curso"
+            },
+            {
+              "label": "Texto para el botón Retroceder en cada una de las pantallas de la biblioteca y preguntas ramificadas",
+              "default": "Atrás"
+            },
+            {
+              "label": "Text for the disabled button on the library screens",
+              "default": "Require to complete the current module"
+            },
+            {
+              "label": "Texto para el botón usado para volver a reproducir un vídeo",
+              "default": "Volver a reproducir el vídeo"
+            },
+            {
+              "label": "Etiqueta para la puntuación en la pantalla final",
+              "default": "Tu puntuación:"
+            },
+            {
+              "label": "Etiqueta Aria para botón de pantalla completa",
+              "default": "Pantalla Completa"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

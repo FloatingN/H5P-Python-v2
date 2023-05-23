@@ -1,0 +1,152 @@
+@import '../../styles/main.scss';
+
+.content-type-menu {
+  display: inline-block;
+  background-color: $col1;
+  height: 55em;
+  width: 11.5em;
+  min-width: 11.5em;
+
+  .loading {
+    padding: 1em;
+    color: white;
+  }
+}
+
+.tree.h5peditor-semi-fullscreen .content-type-menu {
+  height: 100%;
+}
+
+.label-info {
+  position: relative;
+  color: white;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  padding-top: 1.333333333333333em;
+  padding-left: 1.333333333333333em;
+  padding-bottom: 0;
+  font-weight: 300;
+  display: flex;
+  margin-bottom: 0.6666666666666667em;
+  margin-top: 0.6666666666666667em;
+}
+
+.content-type-buttons {
+  list-style-type: none;
+  display: block;
+  padding: 1em;
+  margin-top: 0;
+  border-bottom: solid 1px #525863;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+
+  li {
+    width: 9.5rem;
+    height: 2.2rem;
+    background: $col10;
+    padding: 0.5rem;
+    display: block;
+    box-sizing: border-box;
+    font-size: 0.7em;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    line-height: 0.875rem;
+    color: #e9ebee;
+    font-weight: 400;
+    border: solid 2px $col10;
+    border-radius: 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  li:hover {
+    color: #e9ebee;
+    background-color: #525863;
+    border: solid 2px $draggable-hover-border;
+  }
+
+  li:active {
+    border: solid 1px $accent-col;
+    background-color: $col6;
+  }
+
+  li:before {
+    font-family: "Material Icons";
+    display: block;
+    float: left;
+    padding-bottom: 0.2rem;
+    font-size: 0.875rem;
+    margin-right: 0.6rem;
+  }
+
+  li.video:before {
+    content: $icon-video;
+  }
+
+  li.coursepresentation:before {
+    content: $icon-presentation;
+  }
+
+  li.advancedtext:before {
+    content: $icon-text;
+  }
+
+  li.image:before {
+    content: $icon-image;
+  }
+
+  li.interactivevideo:before {
+    content: $icon-interactive-video;
+  }
+
+  li.imagehotspots:before {
+    content: $icon-image-hotspots;
+  }
+
+  li.branchingquestion{
+    background-color: #396ad1;
+    border-color: #396ad1;
+    color: #ffffff;
+  }
+
+  li.branchingquestion:before {
+    font-family: "bs-editor";
+    content: $icon-branching-question;
+  }
+
+  li.reuse-question {
+    &.disabled {
+      border-color: transparent;
+      background: $col10;
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:before {
+        content: '\e911';
+      }
+    }
+
+    &:before {
+      font-family: "H5P";
+      content: '\e910';
+    }
+  }
+
+  li.greyout {
+    border-color: #30333a;
+    background-color: #30333a;
+    color: #525358;
+    &.branchingquestion{
+      background-color: #2b51a0;
+      border-color: #2b51a0;
+      color: #5a7cc4;
+    }
+  }
+}

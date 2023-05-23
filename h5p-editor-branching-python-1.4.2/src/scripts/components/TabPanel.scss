@@ -1,0 +1,110 @@
+@import '../../styles/components/icons.scss';
+@import '../../styles/main.scss';
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  height: 55em;
+}
+
+.tabs.hidden {
+  display: none;
+}
+
+.tree.h5peditor-semi-fullscreen .tabs {
+  height: 100%;
+}
+
+.tabs-nav {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  background: grey;
+  list-style-type: none;
+  background-color: $col6;
+}
+
+.tabs-nav li {
+  padding: 1em 0;
+  width: 3em;
+  box-sizing: border-box;
+  text-align: center;
+  color: $main-grey;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  border-left: solid 3px $col6;
+  border-right: solid 3px transparent;
+
+  &:hover {
+    background-color: $col1;
+    border-left-color: $col1;
+    color: #fff;
+  }
+
+  &:before {
+    font-family: "Material Icons";
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  &.bs-editor-content-tab::before {
+    content: $icon-edit;
+    font-size: 1.15em;
+    line-height: 1.3em;
+  }
+
+  &.bs-editor-settings-tab::before {
+    content: $icon-gear;
+  }
+
+  &.bs-editor-translations-tab::before {
+    content: $icon-translation;
+  }
+
+  &.bs-editor-tutorial-tab::before {
+    content: $icon-tutorial;
+  }
+
+  &.bs-editor-metadata-tab::before {
+    font-family: "bs-editor";
+    content: $icon-metadata;
+  }
+}
+
+.tabs-nav li.active {
+  background-color: #F1F3F6;
+  border-left-color: #F1F3F6;
+
+  &:before {
+    color: $col1;
+  }
+
+  &:hover {
+    background-color: #F1F3F6;
+    border-left-color: #F1F3F6;
+  }
+}
+
+.tabs-nav li.has-submenu {
+  border-left-color: $col6;
+
+  &:before {
+    color: $main-grey;
+  }
+
+  &:hover {
+    border-left-color: $col1;
+  }
+}
+
+.tabs-nav li.has-submenu.active {
+  background-color: $col1;
+  border-left-color: #1773DA;
+
+  &:before {
+    color: #fff;
+  }
+}

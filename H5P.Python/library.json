@@ -1,0 +1,58 @@
+{
+  "title": "Python",
+  "description": "Previously known as H5P.Python developed by Degrange Mathieu. Now rewritten to integrate in H5P.Branching_Python.",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 69,
+  "runnable": 1,
+  "author": "Kharitonov Boris",
+  "license": "MIT",
+  "machineName": "H5P.Python",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "dist/h5p-python.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "dist/h5p-python.css"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.Question",
+      "majorVersion": 1,
+      "minorVersion": 5
+    },
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 3
+    },
+    {
+      "machineName": "Skulpt",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "CodeMirror",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.CodeEditor",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "H5PEditor.ShowWhen",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ]
+}
